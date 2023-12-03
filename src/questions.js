@@ -1,3 +1,5 @@
+
+//in this raw data, the first answer in the answers array is always the right answer; we shuffle manually on the frontend
 export default [
     {
       id: 'q1',
