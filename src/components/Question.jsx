@@ -23,14 +23,16 @@ export default function Question({ onSelectAnswer, onSkipAnswer, index }) {
 
             setTimeout(() => {
                 onSelectAnswer(answer);
-            })
+            }, 2000)
         }, 1000);
     };
 
     let answeredState = '';
 
-    if (answer.selectedAnswer) {
+    if (answer.selectedAnswer && answer.isCorrect !== null) {
        answeredState = answer.isCorrect ? 'correct' : 'wrong';
+    } else if (answer.selectedAnswer) {
+        answeredState = 'answered';
     }
 
     return (
